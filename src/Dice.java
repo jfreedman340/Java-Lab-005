@@ -6,15 +6,16 @@ public class Dice {
     private int sides;
     private Random randomGenerator;
 
+    public Dice (int sides) {
+        this.sides = sides;
+        randomGenerator = new Random(); //instance of random class
+
+    }
     public void roll () {
-        RandomGenerator rand = new Random(); //instance of random class
-        this.sides = 5;
-        //generate random values from 1-6
-        this.sideFacingUp = rand.nextInt(sides+1);
+        this.sideFacingUp = randomGenerator.nextInt(1, sides);
     }
 
     public int view () {
-        System.out.println(sideFacingUp);
         return sideFacingUp;
     }
 }
